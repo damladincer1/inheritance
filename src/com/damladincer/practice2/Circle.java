@@ -1,24 +1,28 @@
 package com.damladincer.practice2;
 
-public class Circle {
+public class Circle extends Shape {
 
 	private double radius;
-	private String color;
 
 	// constructors
 	public Circle() {
+		super();
 		this.radius = 1.0;
-		this.color = "red";
 	}
 
 	public Circle(double radius) {
+		super();
 		this.radius = radius;
-		this.color = "red";
 	}
-
+	
 	public Circle(double radius, String color) {
+		super(color, false);
 		this.radius = radius;
-		this.color = color;
+	}
+	
+	public Circle(double radius,String color, boolean isDrawn) {
+		super(color,isDrawn);
+		this.radius=radius;
 	}
 
 	// getter & setter
@@ -30,25 +34,19 @@ public class Circle {
 		this.radius = radius;
 	}
 
-	public String getColor() {
-		return color;
-	}
-
-	public void setColor(String color) {
-		this.color = color;
-	}
-
 	// Methods
-	public double getCircumference() {
+	@Override
+	public double getPerimeter() {
 		return 2 * Math.PI * this.radius;
 	}
 	
+	@Override
 	public double getArea() {
 		return Math.pow(getRadius(), 2) * Math.PI;
 	}
 	
 	@Override
 	public String toString() {
-		return "Circle[radius=" + getRadius() + ",color=" + getColor() + "]";
+		return "Circle[radius=" + this.radius + ",color=" + super.getColor() + "]";
 	}
 }

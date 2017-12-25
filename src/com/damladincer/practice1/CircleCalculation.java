@@ -4,6 +4,8 @@ package com.damladincer.practice1;
 import java.util.Locale;
 import java.util.Scanner;
 
+import com.damladincer.practice2.Circle;
+
 /**
  * Exercise CircleComputation (User Input): Write a program called
  * CircleComputation, which prompts user for a radius (in double) and compute
@@ -25,8 +27,8 @@ public class CircleCalculation {
 		double radius = scan.nextDouble();
 		Circle circle = new Circle(radius);
 		
-		System.out.println("The area is: "+NumberFormatter.format(circle.circleArea(), 2));
-		System.out.println("The circumference is: "+NumberFormatter.format(circle.circumference(), 2));
+		System.out.println("The area is: "+NumberFormatter.format(circle.getArea(), 2));
+		System.out.println("The circumference is: "+NumberFormatter.format(circle.getPerimeter(), 2));
 		
 		scan.close();
 	}
